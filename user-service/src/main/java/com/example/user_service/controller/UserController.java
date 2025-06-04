@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import com.example.user_service.model.OrderDTO;
 import com.example.user_service.service.UserService;
@@ -14,8 +13,6 @@ import com.example.user_service.service.UserService;
 @RequestMapping("/api/v1/users")
 public class UserController {
 	
-	@Autowired
-	RestTemplate restTemplate;
 	@Autowired
 	UserService service;
 	

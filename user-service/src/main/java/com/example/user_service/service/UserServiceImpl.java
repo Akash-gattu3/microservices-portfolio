@@ -11,7 +11,8 @@ import com.example.user_service.model.OrderDTO;
 public class UserServiceImpl implements UserService {
 
 	@Autowired
-	RestTemplate restTeamplate;
+	private RestTemplate restTemplate;
+
 	
 	@Override
 	public String getUser(String id) {
@@ -21,7 +22,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public OrderDTO getUserByOrderId(String orderId) {
 		String url = "http://ORDER-SERVICE/api/v1/orders/"+orderId;
-		return restTeamplate.getForObject(url, OrderDTO.class);
+		return restTemplate.getForObject(url, OrderDTO.class);
 		
 		
 	}
