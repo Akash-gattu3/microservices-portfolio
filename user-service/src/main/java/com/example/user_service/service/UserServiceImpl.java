@@ -1,0 +1,31 @@
+package com.example.user_service.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.example.user_service.model.OrderDTO;
+
+@Service
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	RestTemplate restTeamplate;
+	
+	@Override
+	public String getUser(String id) {
+		return "User With ID: "+id;
+	}
+
+	@Override
+	public OrderDTO getUserByOrderId(String orderId) {
+		String url = "http://localhost:8081/api/v1/orders/"+orderId;
+		return restTeamplate.getForObject(url, OrderDTO.class);
+		
+		
+	}
+	
+	
+
+}
