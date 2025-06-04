@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public OrderDTO getUserByOrderId(String orderId) {
-		String url = "http://localhost:8081/api/v1/orders/"+orderId;
+		String url = "http://ORDER-SERVICE/api/v1/orders/"+orderId;
 		return restTeamplate.getForObject(url, OrderDTO.class);
 		
 		
